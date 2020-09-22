@@ -751,10 +751,35 @@
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gt-cT-k7h">
+                                <rect key="frame" x="114" y="190" width="157" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Plural Noun:" id="Jrp-fA-IzN">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5su-Yh-kT8">
+                                <rect key="frame" x="287" y="184" width="123" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sgg-yk-pGP" id="8Mi-5b-Xff">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="7gE-sb-ZjJ">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="sgg-yk-pGP"/>
+                                            <menuItem title="Item 2" id="QSM-re-mWY"/>
+                                            <menuItem title="Item 3" id="8Ab-k9-NXr"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="pastTenseVerbTextField" destination="Hqx-or-uNh" id="vQM-Gd-pwJ"/>
+                        <outlet property="pluralNounPopup" destination="5su-Yh-kT8" id="Eq5-SA-qgW"/>
                         <outlet property="singularNounCombo" destination="zB6-v0-KDa" id="MCj-pa-tz5"/>
                     </connections>
                 </viewController>

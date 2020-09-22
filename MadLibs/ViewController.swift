@@ -9,10 +9,13 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    fileprivate let singularNouns = ["dog", "muppet", "ninja", "pirate", "dev" ]
+    
+    fileprivate let pluralNouns = ["tacos", "rainbows", "iPhones", "gold coins"]
+    
     @IBOutlet weak var pastTenseVerbTextField: NSTextField!
     @IBOutlet weak var singularNounCombo: NSComboBox!
-    fileprivate let singularNouns = ["dog", "muppet", "ninja", "pirate", "dev" ]
-
+    @IBOutlet weak var pluralNounPopup: NSPopUpButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,10 @@ class ViewController: NSViewController {
         singularNounCombo.removeAllItems()
         singularNounCombo.addItems(withObjectValues: singularNouns)
         singularNounCombo.selectItem(at: singularNouns.count - 1)
+        
+        pluralNounPopup.removeAllItems()
+        pluralNounPopup.addItems(withTitles: pluralNouns)
+        pluralNounPopup.selectItem(at: 0)
     }
 
     override var representedObject: Any? {
