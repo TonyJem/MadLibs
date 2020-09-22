@@ -47,6 +47,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var threeSixtyRadioButton: NSButton!
     @IBOutlet weak var wwdcRadioButton: NSButton!
     @IBOutlet weak var yellCheck: NSButton!
+    @IBOutlet weak var voiceSegmentedControl: NSSegmentedControl!
     
     
     override func viewDidLoad() {
@@ -74,6 +75,9 @@ class ViewController: NSViewController {
         
         // set check button state
         yellCheck.state = NSControl.StateValue.off
+        
+        // Set the segmented control initial selection
+        voiceSegmentedControl.selectedSegment = 1
     }
     
     override var representedObject: Any? {
