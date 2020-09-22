@@ -48,6 +48,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var wwdcRadioButton: NSButton!
     @IBOutlet weak var yellCheck: NSButton!
     @IBOutlet weak var voiceSegmentedControl: NSSegmentedControl!
+    @IBOutlet weak var resultTextField: NSTextField!
+    @IBOutlet weak var imageView: NSImageView!
     
     
     override func viewDidLoad() {

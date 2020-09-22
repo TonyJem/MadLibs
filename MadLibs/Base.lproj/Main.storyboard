@@ -946,14 +946,30 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03b-a8-R0D">
+                                <rect key="frame" x="230" y="49" width="230" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" selectable="YES" borderStyle="bezel" drawsBackground="YES" id="AC0-Dt-VbH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7c-l1-O9n">
+                                <rect key="frame" x="17" y="17" width="122" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="Djk-n1-vPR"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="E6i-i5-d6K" id="wYm-aS-cah"/>
                         <outlet property="finalText" destination="kyc-36-Lm7" id="uqL-SS-hhC"/>
+                        <outlet property="imageView" destination="X7c-l1-O9n" id="Rp0-Ja-E4P"/>
                         <outlet property="pastTenseVerbTextField" destination="Hqx-or-uNh" id="vQM-Gd-pwJ"/>
                         <outlet property="phraseTextView" destination="Hdj-gZ-a6t" id="EmY-W3-QRv"/>
                         <outlet property="pluralNounPopup" destination="5su-Yh-kT8" id="Eq5-SA-qgW"/>
+                        <outlet property="resultTextField" destination="03b-a8-R0D" id="6ot-XR-3gu"/>
                         <outlet property="rwDevConRadioButton" destination="CcB-zc-9OC" id="sXW-5A-J6T"/>
                         <outlet property="singularNounCombo" destination="zB6-v0-KDa" id="MCj-pa-tz5"/>
                         <outlet property="sliderContol" destination="54S-r1-Bun" id="WfM-oz-3iQ"/>
