@@ -9,11 +9,23 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    var madLibSentence = ""
-    
     fileprivate let singularNouns = ["dog", "muppet", "ninja", "pirate", "dev" ]
     
     fileprivate let pluralNouns = ["tacos", "rainbows", "iPhones", "gold coins"]
+    
+    fileprivate var selectedPlace: String {
+      var place = "home"
+      if rwDevConRadioButton.state == NSControl.StateValue.on {
+        place = "RWDevCon"
+      }
+      else if threeSixtyRadioButton.state == NSControl.StateValue.on {
+        place = "360iDev"
+      }
+      else if wwdcRadioButton.state == NSControl.StateValue.on {
+        place = "WWDC"
+      }
+      return place
+    }
     
     fileprivate enum VoiceRate: Int  {
         case slow
@@ -95,14 +107,45 @@ class ViewController: NSViewController {
     }
     
     func updateUI(){
+        // 1
         let pastTenseVerb = pastTenseVerbTextField.stringValue
+
+        // 2
         let singularNoun = singularNounCombo.stringValue
+            
+        // 3
+        let amount = sliderContol.integerValue
+            
+        // 4
         let pluralNoun = pluralNouns[pluralNounPopup.indexOfSelectedItem]
+            
+        // 5
         let phrase = phraseTextView.string
+            
+        // 6
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        let date = dateFormatter.string(from: datePicker.dateValue)
+            
+        // 7
+        var voice = "said"
+        if yellCheck.state == NSControl.StateValue.on {
+          voice = "yelled"
+        }
+            
+        // 8
+        let sentence = "On \(date), at \(selectedPlace) a \(singularNoun) \(pastTenseVerb) \(amount) \(pluralNoun) and \(voice), \(phrase)"
+            
+        // 9
+        resultTextField.stringValue = sentence
+        imageView.image = NSImage(named: "face")
+
+        // 10
+        let selectedSegment = voiceSegmentedControl.selectedSegment
+        let voiceRate = VoiceRate(rawValue: selectedSegment) ?? .normal
+        readSentence(sentence, rate: voiceRate)
         
-        madLibSentence = "A \(singularNoun) \(pastTenseVerb) \(pluralNoun) and said, \(phrase)!"
-        
-        finalText.stringValue = madLibSentence
+        finalText.stringValue = sentence
     }
     
     @IBAction func pastTenseVerbTextFieldChanged(_ sender: Any) {
@@ -116,8 +159,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func goButtonClicked(_ sender: Any) {
-        print("\(madLibSentence)")
-        readSentence(madLibSentence, rate: .normal)
+        updateUI()
     }
     
     @IBAction func sliderChanged(_ sender: Any) {
