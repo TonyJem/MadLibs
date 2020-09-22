@@ -8,10 +8,29 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
     fileprivate let singularNouns = ["dog", "muppet", "ninja", "pirate", "dev" ]
     
     fileprivate let pluralNouns = ["tacos", "rainbows", "iPhones", "gold coins"]
+    
+    fileprivate enum VoiceRate: Int  {
+        case slow
+        case normal
+        case fast
+        
+        var speed: Float {
+            switch self {
+            case .slow:
+                return 60
+            case .normal:
+                return 175;
+            case .fast:
+                return 360;
+            }
+        }
+    }
+    
+    fileprivate let synth = NSSpeechSynthesizer()
     
     @IBOutlet weak var pastTenseVerbTextField: NSTextField!
     @IBOutlet weak var singularNounCombo: NSComboBox!
@@ -20,7 +39,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         pastTenseVerbTextField.stringValue = "ate"
         
         singularNounCombo.removeAllItems()
@@ -34,24 +53,32 @@ class ViewController: NSViewController {
         phraseTextView.string = "Me coding Mac Apps!!!"
         
     }
-
+    
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
+    
+    fileprivate func readSentence(_ sentence: String, rate: VoiceRate ) {
+        synth.rate = rate.speed
+        synth.stopSpeaking()
+        synth.startSpeaking(sentence)
+    }
+    
+    
     @IBAction func goButtonClicked(_ sender: Any) {
         
         let pastTenseVerb = pastTenseVerbTextField.stringValue
         let singularNoun = singularNounCombo.stringValue
         let pluralNoun = pluralNouns[pluralNounPopup.indexOfSelectedItem]
         let phrase = phraseTextView.string
-
+        
         let madLibSentence = "A \(singularNoun) \(pastTenseVerb) \(pluralNoun) and said, \(phrase)!"
-
+        
         print("\(madLibSentence)")
-
+        
+        readSentence(madLibSentence, rate: .normal)
     }
 }
 
