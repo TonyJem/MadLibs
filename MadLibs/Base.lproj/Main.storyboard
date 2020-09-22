@@ -926,6 +926,14 @@
                                     <action selector="radioButtonChanged:" target="XfG-lQ-9wD" id="tFg-oj-IDn"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAt-Ql-Ccx">
+                                <rect key="frame" x="293" y="40" width="52" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Yell!!" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wlr-IA-ckb">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -940,6 +948,7 @@
                         <outlet property="sliderValueLabel" destination="pvK-Bb-Ha7" id="h0L-NK-MdG"/>
                         <outlet property="threeSixtyRadioButton" destination="sLx-gs-MK9" id="0eA-rF-nMS"/>
                         <outlet property="wwdcRadioButton" destination="hL0-hq-2gV" id="dHU-AE-Irs"/>
+                        <outlet property="yellCheck" destination="SAt-Ql-Ccx" id="nfg-kg-4hH"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -46,6 +46,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var rwDevConRadioButton: NSButton!
     @IBOutlet weak var threeSixtyRadioButton: NSButton!
     @IBOutlet weak var wwdcRadioButton: NSButton!
+    @IBOutlet weak var yellCheck: NSButton!
     
     
     override func viewDidLoad() {
@@ -70,6 +71,9 @@ class ViewController: NSViewController {
         
         // Set the radio group's initial selection
         rwDevConRadioButton.state = NSControl.StateValue.on
+        
+        // set check button state
+        yellCheck.state = NSControl.StateValue.off
     }
     
     override var representedObject: Any? {
