@@ -9,6 +9,8 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    var madLibSentence = ""
+    
     fileprivate let singularNouns = ["dog", "muppet", "ninja", "pirate", "dev" ]
     
     fileprivate let pluralNouns = ["tacos", "rainbows", "iPhones", "gold coins"]
@@ -38,6 +40,7 @@ class ViewController: NSViewController {
     @IBOutlet var phraseTextView: NSTextView!
     @IBOutlet weak var sliderValueLabel: NSTextField!
     @IBOutlet weak var sliderContol: NSSlider!
+    @IBOutlet weak var finalText: NSTextField!
     
     
     override func viewDidLoad() {
@@ -70,18 +73,29 @@ class ViewController: NSViewController {
         synth.startSpeaking(sentence)
     }
     
-    
-    @IBAction func goButtonClicked(_ sender: Any) {
-        
+    func updateUI(){
         let pastTenseVerb = pastTenseVerbTextField.stringValue
         let singularNoun = singularNounCombo.stringValue
         let pluralNoun = pluralNouns[pluralNounPopup.indexOfSelectedItem]
         let phrase = phraseTextView.string
         
-        let madLibSentence = "A \(singularNoun) \(pastTenseVerb) \(pluralNoun) and said, \(phrase)!"
+        madLibSentence = "A \(singularNoun) \(pastTenseVerb) \(pluralNoun) and said, \(phrase)!"
         
+        finalText.stringValue = madLibSentence
+    }
+    
+    @IBAction func pastTenseVerbTextFieldChanged(_ sender: Any) {
+        updateUI()
+    }
+    @IBAction func singularNounComboChanged(_ sender: Any) {
+        updateUI()
+    }
+    @IBAction func pluralNounPopupChanged(_ sender: Any) {
+        updateUI()
+    }
+    
+    @IBAction func goButtonClicked(_ sender: Any) {
         print("\(madLibSentence)")
-        
         readSentence(madLibSentence, rate: .normal)
     }
     

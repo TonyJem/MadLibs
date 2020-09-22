@@ -718,6 +718,9 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="pastTenseVerbTextFieldChanged:" target="XfG-lQ-9wD" id="ejU-ZX-cMU"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDB-5b-J0i">
                                 <rect key="frame" x="114" y="260" width="157" height="16"/>
@@ -750,6 +753,9 @@
                                         <string>Item 3</string>
                                     </objectValues>
                                 </comboBoxCell>
+                                <connections>
+                                    <action selector="singularNounComboChanged:" target="XfG-lQ-9wD" id="fpI-fe-Ay0"/>
+                                </connections>
                             </comboBox>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gt-cT-k7h">
                                 <rect key="frame" x="114" y="190" width="157" height="16"/>
@@ -774,6 +780,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="pluralNounPopupChanged:" target="XfG-lQ-9wD" id="Qef-0w-Qna"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ks4-JR-KPo">
                                 <rect key="frame" x="114" y="156" width="157" height="16"/>
@@ -839,9 +848,19 @@
                                     <action selector="sliderChanged:" target="XfG-lQ-9wD" id="4mY-E7-FOs"/>
                                 </connections>
                             </slider>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyc-36-Lm7">
+                                <rect key="frame" x="20" y="20" width="382" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Sgg-cG-GBO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="finalText" destination="kyc-36-Lm7" id="uqL-SS-hhC"/>
                         <outlet property="pastTenseVerbTextField" destination="Hqx-or-uNh" id="vQM-Gd-pwJ"/>
                         <outlet property="phraseTextView" destination="Hdj-gZ-a6t" id="EmY-W3-QRv"/>
                         <outlet property="pluralNounPopup" destination="5su-Yh-kT8" id="Eq5-SA-qgW"/>
