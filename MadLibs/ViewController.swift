@@ -41,6 +41,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var sliderValueLabel: NSTextField!
     @IBOutlet weak var sliderContol: NSSlider!
     @IBOutlet weak var finalText: NSTextField!
+    @IBOutlet weak var datePicker: NSDatePicker!
+
+    @IBOutlet weak var rwDevConRadioButton: NSButton!
+    @IBOutlet weak var threeSixtyRadioButton: NSButton!
+    @IBOutlet weak var wwdcRadioButton: NSButton!
     
     
     override func viewDidLoad() {
@@ -59,6 +64,12 @@ class ViewController: NSViewController {
         phraseTextView.string = "Me coding Mac Apps!!!"
         
         sliderChanged(self)
+        
+        // Set the date picker to display the current date
+        datePicker.dateValue = Date()
+        
+        // Set the radio group's initial selection
+        rwDevConRadioButton.state = NSControl.StateValue.on
     }
     
     override var representedObject: Any? {
@@ -104,5 +115,7 @@ class ViewController: NSViewController {
         sliderValueLabel.stringValue = "Slider value [\(sliderValue)]"
     }
     
+    @IBAction func radioButtonChanged(_ sender: Any) {
+    }
 }
 
