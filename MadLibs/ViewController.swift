@@ -41,6 +41,17 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func goButtonClicked(_ sender: Any) {
+        
+        let pastTenseVerb = pastTenseVerbTextField.stringValue
+        let singularNoun = singularNounCombo.stringValue
+        let pluralNoun = pluralNouns[pluralNounPopup.indexOfSelectedItem]
+        let phrase = phraseTextView.string
 
+        let madLibSentence = "A \(singularNoun) \(pastTenseVerb) \(pluralNoun) and said, \(phrase)!"
+
+        print("\(madLibSentence)")
+
+    }
 }
 
