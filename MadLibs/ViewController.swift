@@ -16,6 +16,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var pastTenseVerbTextField: NSTextField!
     @IBOutlet weak var singularNounCombo: NSComboBox!
     @IBOutlet weak var pluralNounPopup: NSPopUpButton!
+    @IBOutlet var phraseTextView: NSTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class ViewController: NSViewController {
         pluralNounPopup.removeAllItems()
         pluralNounPopup.addItems(withTitles: pluralNouns)
         pluralNounPopup.selectItem(at: 0)
+        
+        phraseTextView.string = "Me coding Mac Apps!!!"
+        
     }
 
     override var representedObject: Any? {
