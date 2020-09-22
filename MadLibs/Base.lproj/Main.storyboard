@@ -812,7 +812,7 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEb-ut-icd">
-                                <rect key="frame" x="246" y="39" width="62" height="32"/>
+                                <rect key="frame" x="404" y="13" width="62" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Go!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kAc-NT-mTr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -822,6 +822,23 @@
                                     <action selector="goButtonClicked:" target="XfG-lQ-9wD" id="7hT-th-URH"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvK-Bb-Ha7">
+                                <rect key="frame" x="114" y="53" width="157" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Slider value [ ]" id="gH4-Qf-gLO">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54S-r1-Bun">
+                                <rect key="frame" x="287" y="52" width="143" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="2" maxValue="10" doubleValue="5" tickMarkPosition="above" sliderType="linear" id="u9T-CN-SQg"/>
+                                <connections>
+                                    <action selector="sliderChanged:" target="XfG-lQ-9wD" id="4mY-E7-FOs"/>
+                                </connections>
+                            </slider>
                         </subviews>
                     </view>
                     <connections>
@@ -829,6 +846,8 @@
                         <outlet property="phraseTextView" destination="Hdj-gZ-a6t" id="EmY-W3-QRv"/>
                         <outlet property="pluralNounPopup" destination="5su-Yh-kT8" id="Eq5-SA-qgW"/>
                         <outlet property="singularNounCombo" destination="zB6-v0-KDa" id="MCj-pa-tz5"/>
+                        <outlet property="sliderContol" destination="54S-r1-Bun" id="WfM-oz-3iQ"/>
+                        <outlet property="sliderValueLabel" destination="pvK-Bb-Ha7" id="h0L-NK-MdG"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

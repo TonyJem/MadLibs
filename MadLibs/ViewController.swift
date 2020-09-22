@@ -36,6 +36,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var singularNounCombo: NSComboBox!
     @IBOutlet weak var pluralNounPopup: NSPopUpButton!
     @IBOutlet var phraseTextView: NSTextView!
+    @IBOutlet weak var sliderValueLabel: NSTextField!
+    @IBOutlet weak var sliderContol: NSSlider!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,7 @@ class ViewController: NSViewController {
         
         phraseTextView.string = "Me coding Mac Apps!!!"
         
+        sliderChanged(self)
     }
     
     override var representedObject: Any? {
@@ -80,5 +84,11 @@ class ViewController: NSViewController {
         
         readSentence(madLibSentence, rate: .normal)
     }
+    
+    @IBAction func sliderChanged(_ sender: Any) {
+        let sliderValue = sliderContol.integerValue
+        sliderValueLabel.stringValue = "Slider value [\(sliderValue)]"
+    }
+    
 }
 
